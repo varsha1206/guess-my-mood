@@ -1,0 +1,25 @@
+# Ignore preparing folder
+preparing/
+
+# Ignore Python virtual environment
+mood/
+
+# Ignore environment files
+*.env
+
+# Ignore pickle files
+*.pkl
+*.pickle
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
