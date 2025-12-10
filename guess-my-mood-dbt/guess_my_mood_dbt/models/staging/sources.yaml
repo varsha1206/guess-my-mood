@@ -1,0 +1,107 @@
+version: 2
+
+sources:
+  - name: staging
+    database: dm2-v-479909
+    schema: guess_my_mood_dataset
+    description: "Raw staging tables loaded from external sources"
+    tables:
+      - name: stg_weather_data
+        description: "Weather data with location, temperature, and conditions"
+        identifier: stg_weather_data  # Explicitly reference your existing table
+        columns:
+          - name: apparent_temperature
+            description: "Apparent temperature in Celsius"
+          - name: cloudcover
+            description: "Cloud cover percentage"
+          - name: precipitation
+            description: "Precipitation in mm"
+          - name: relativehumidity_2m
+            description: "Relative humidity at 2 meters"
+          - name: temperature_2m
+            description: "Temperature at 2 meters in Celsius"
+          - name: timestamp
+            description: "Timestamp of the weather observation"
+          - name: weathercode
+            description: "Weather condition code"
+          
+      - name: stg_music_data
+        description: "Music listening history and preferences"
+        identifier: stg_music_data
+        columns:
+          - name: track_name
+            description: "Name of the sound track"
+          - name: streamable
+            description: "Whether the track is streamable"
+          - name: played_at
+            description: "Time when the track was played"
+          - name: played_at_uts
+            description: "Unix timestamp of when the track was played"
+          - name: artist_name
+            description: "Name of the artist"
+          - name: album_name
+            description: "Name of the album"
+          
+      - name: stg_music_metadata
+        description: "Metadata about music tracks from Spotify API"
+        identifier: stg_music_metadata
+        columns:
+          - name: track_id
+            description: "Spotify track ID - unique identifier"
+              
+          - name: artists
+            description: "List of artists on the track"
+            
+          - name: album_name
+            description: "Name of the album"
+            
+          - name: track_name
+            description: "Name of the track"
+              
+          - name: popularity
+            description: "Spotify popularity score (0-100)"
+                  
+          - name: duration_ms
+            description: "Duration of track in milliseconds"
+              
+          - name: explicit
+            description: "Whether the track contains explicit content (boolean)"
+                  
+          - name: danceability
+            description: "How suitable track is for dancing (0-1)"
+                  
+          - name: energy
+            description: "Perceptual measure of intensity and activity (0-1)"
+                  
+          - name: key
+            description: "Key the track is in (0=C, 1=C#, etc.)"
+                  
+          - name: loudness
+            description: "Overall loudness in decibels (dB)"
+            
+          - name: mode
+            description: "Modality (0=minor, 1=major)"
+                  
+          - name: speechiness
+            description: "Presence of spoken words (0-1)"
+                  
+          - name: acousticness
+            description: "Confidence measure of track being acoustic (0-1)"
+                  
+          - name: instrumentalness
+            description: "Predicts whether track contains no vocals (0-1)"
+                  
+          - name: liveness
+            description: "Detects presence of audience (0-1)"
+                  
+          - name: valence
+            description: "Musical positiveness (0=sad/depressing, 1=happy/cheerful)"
+                  
+          - name: tempo
+            description: "Overall estimated tempo in beats per minute (BPM)"
+              
+          - name: time_signature
+            description: "Estimated time signature (3, 4, 5, etc.)"
+                  
+          - name: track_genre
+            description: "Genre classification of the track"

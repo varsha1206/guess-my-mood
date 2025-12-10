@@ -1,0 +1,102 @@
+[0m23:25:12.090852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B29685210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B2CBF5A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B2CBF5950>]}
+
+
+============================== 23:25:12.104735 | cc19a1d1-70a2-47d8-af2b-ca181476d248 ==============================
+[0m23:25:12.104735 [info ] [MainThread]: Running with dbt=1.11.0-rc3
+[0m23:25:12.108924 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Varsha\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init guess_my_mood_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:25:12.170722 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Varsha\.dbt
+[0m23:25:12.178207 [debug] [MainThread]: Starter project path: C:\Users\Varsha\OneDrive\Documents\Github\guess-my-mood\mood\Lib\site-packages\dbt\include\starter_project
+[0m23:25:12.403429 [info ] [MainThread]: 
+Your new dbt project "guess_my_mood_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:25:12.406078 [info ] [MainThread]: Setting up your profile.
+[0m23:26:47.176685 [info ] [MainThread]: Profile guess_my_mood_dbt written to C:\Users\Varsha\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:26:47.181687 [debug] [MainThread]: Command `dbt init` succeeded at 23:26:47.181687 after 95.32 seconds
+[0m23:26:47.183690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B2CEC1050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B2CEC3150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025B262CA990>]}
+[0m23:26:47.186267 [debug] [MainThread]: Flushing usage events
+[0m23:26:47.989574 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:29:52.940564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F5AFBFB90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F5AFCA8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F5AD55D10>]}
+
+
+============================== 23:29:52.953097 | b2cc9df1-2a83-4843-88aa-fcc3bc81425c ==============================
+[0m23:29:52.953097 [info ] [MainThread]: Running with dbt=1.11.0-rc3
+[0m23:29:52.955631 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Varsha\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:29:53.092005 [info ] [MainThread]: dbt version: 1.11.0-rc3
+[0m23:29:53.094011 [info ] [MainThread]: python version: 3.11.0
+[0m23:29:53.096587 [info ] [MainThread]: python path: C:\Users\Varsha\OneDrive\Documents\Github\guess-my-mood\mood\Scripts\python.exe
+[0m23:29:53.098580 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m23:30:04.974669 [info ] [MainThread]: Using profiles dir at C:\Users\Varsha\.dbt
+[0m23:30:04.976692 [info ] [MainThread]: Using profiles.yml file at C:\Users\Varsha\.dbt\profiles.yml
+[0m23:30:04.978705 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Varsha\OneDrive\Documents\Github\guess-my-mood\guess-my-mood-dbt\dbt_project.yml
+[0m23:30:04.980916 [info ] [MainThread]: adapter type: bigquery
+[0m23:30:04.982927 [info ] [MainThread]: adapter version: 1.10.3
+[0m23:30:04.983940 [info ] [MainThread]: Configuration:
+[0m23:30:04.986487 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:30:04.987904 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m23:30:04.989403 [info ] [MainThread]: Required dependencies:
+[0m23:30:04.990732 [debug] [MainThread]: Executing "git --help"
+[0m23:30:05.097964 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:30:05.099971 [debug] [MainThread]: STDERR: "b''"
+[0m23:30:05.101967 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:30:05.104481 [info ] [MainThread]: Connection:
+[0m23:30:05.105511 [info ] [MainThread]:   method: service-account
+[0m23:30:05.106950 [info ] [MainThread]:   database: dm2-v-479909
+[0m23:30:05.108965 [info ] [MainThread]:   execution_project: dm2-v-479909
+[0m23:30:05.110966 [info ] [MainThread]:   schema: guess_my_mood_dataset
+[0m23:30:05.112489 [info ] [MainThread]:   location: US
+[0m23:30:05.114489 [info ] [MainThread]:   priority: interactive
+[0m23:30:05.117191 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m23:30:05.118210 [info ] [MainThread]:   impersonate_service_account: None
+[0m23:30:05.120208 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m23:30:05.122212 [info ] [MainThread]:   job_retries: 1
+[0m23:30:05.126892 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m23:30:05.129208 [info ] [MainThread]:   job_execution_timeout_seconds: 120
+[0m23:30:05.130048 [info ] [MainThread]:   timeout_seconds: 120
+[0m23:30:05.132554 [info ] [MainThread]:   client_id: None
+[0m23:30:05.134652 [info ] [MainThread]:   token_uri: None
+[0m23:30:05.136671 [info ] [MainThread]:   compute_region: None
+[0m23:30:05.139693 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m23:30:05.141688 [info ] [MainThread]:   gcs_bucket: None
+[0m23:30:05.146283 [info ] [MainThread]:   dataproc_batch: None
+[0m23:30:05.163809 [info ] [MainThread]: Registered adapter: bigquery=1.10.3
+[0m23:30:06.960510 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m23:30:06.962534 [debug] [MainThread]: On debug: select 1 as id
+[0m23:30:06.964532 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:30:06.966066 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 22] Invalid argument: '"C:\\Users\\Varsha\\Downloads\\dbt-user-creds.json"''
+[0m23:30:06.968075 [debug] [MainThread]: BigQuery adapter: Unhandled error while running:
+select 1 as id
+[0m23:30:06.969070 [debug] [MainThread]: BigQuery adapter: Database Error
+  [Errno 22] Invalid argument: '"C:\\Users\\Varsha\\Downloads\\dbt-user-creds.json"'
+[0m23:30:06.981024 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m23:30:06.984964 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m23:30:06.986982 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Varsha\OneDrive\Documents\Github\guess-my-mood\guess-my-mood-dbt\dbt_project.yml> not found
+
+[0m23:30:06.993612 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >'NoneType' object has no attribute 'close'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m23:30:07.002167 [debug] [MainThread]: Command `dbt debug` failed at 23:30:07.002167 after 14.34 seconds
+[0m23:30:07.003901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F541FBF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F1255D810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024F5442A650>]}
+[0m23:30:07.006941 [debug] [MainThread]: Flushing usage events
+[0m23:30:07.743275 [debug] [MainThread]: An error was encountered while trying to flush usage events

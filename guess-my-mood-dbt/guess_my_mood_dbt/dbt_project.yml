@@ -1,0 +1,51 @@
+name: 'guess_my_mood_dbt'
+version: '1.0.0'
+profile: 'guess_my_mood_dbt'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuration for all models
+models:
+  guess_my_mood_dbt:
+    # Default materialization for all models
+    +materialized: view
+    
+    # Staging layer - already exists in BigQuery
+    staging:
+      +materialized: table  # These are already tables in your BigQuery
+      +schema: guess_my_mood_dataset  # Your existing dataset
+      +tags: ["staging"]
+    
+    # Intermediate transformations
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+      +tags: ["intermediate"]
+    
+    # Marts for analytics/reporting
+    marts:
+      +materialized: table
+      +schema: analytics
+      +tags: ["marts", "reporting"]
+    
+
+seeds:
+  guess_my_mood_dbt:
+    +schema: raw
+    +materialized: table
+
+vars:
+  project_id: 'dm2-v-479909'
+  dataset: 'guess_my_mood_dataset'
+
+
+query-comment: "guess_my_mood_dbt - {{ invocation_id }}"

@@ -1,6 +1,6 @@
 # Ignore preparing folder
 preparing/
-
+package/
 # Ignore Python virtual environment
 mood/
 
@@ -23,3 +23,5 @@ __pycache__/
 # Ignore OS-specific files
 .DS_Store
 Thumbs.db
+
+.zip

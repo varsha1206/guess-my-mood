@@ -56,16 +56,16 @@ class Staging:
             .config("spark.driver.memory", "512m")
             .config("spark.sql.shuffle.partitions", "4")
             .config("spark.local.dir", tmp_dir)
-            .config(
-                "spark.jars",
-                ",".join(
-                    [
-                        r"C:\Program Files\spark-3.5.5-bin-hadoop3\spark-3.5.5-bin-hadoop3\jars\gcs-connector-hadoop3-2.2.9-shaded.jar",
-                        r"C:\Program Files\spark-3.5.5-bin-hadoop3\spark-3.5.5-bin-hadoop3\jars\guice-5.1.0.jar",
-                        r"C:\Program Files\spark-3.5.5-bin-hadoop3\spark-3.5.5-bin-hadoop3\jars\javax.inject-1.jar",
-                    ]
-                ),
-            )
+            # .config(
+            #     "spark.jars",
+            #     ",".join(
+            #         [
+            #             r"C:\Program Files\spark-3.5.5-bin-hadoop3\spark-3.5.5-bin-hadoop3\jars\gcs-connector-hadoop3-2.2.9-shaded.jar",
+            #             r"C:\Program Files\spark-3.5.5-bin-hadoop3\spark-3.5.5-bin-hadoop3\jars\guice-5.1.0.jar",
+            #             r"C:\Program Files\spark-3.5.5-bin-hadoop3\spark-3.5.5-bin-hadoop3\jars\javax.inject-1.jar",
+            #         ]
+            #     ),
+            # )
             .config(
                 "spark.jars.packages",
                 "com.google.cloud.spark:spark-3.5-bigquery:0.43.1",
