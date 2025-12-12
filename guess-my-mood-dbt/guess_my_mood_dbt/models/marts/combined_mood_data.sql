@@ -7,14 +7,12 @@
 }}
 
 WITH 
--- Get all weather data (NO casting needed - it's already INTEGER)
+-- Get all weather data
 weather_data AS (
   SELECT 
-    timestamp as weather_timestamp,
-    timestamp_converted as weather_timestamp_converted,
     date as weather_date,
     hour_of_day as weather_hour,
-    weather_mood,  -- Already INTEGER, no casting needed
+    weather_mood,
     weather_mood_category,
     temperature_2m,
     apparent_temperature,
@@ -29,7 +27,7 @@ weather_data AS (
   FROM {{ ref('weather_mood') }}
 ),
 
--- Get individual song plays (NO casting needed - music_mood is already INTEGER)
+-- Get ALL individual song plays from music_mood
 music_data AS (
   SELECT 
     track_name as Content_Name,
@@ -53,29 +51,36 @@ music_data AS (
     duration_ms,
     track_genre,
     
-    -- Mood scores (already INTEGER)
+    -- Audio features that exist in music_mood
+    speechiness,
+    acousticness,
+    instrumentalness,
+    liveness,
+    
+    -- Mood scores
     music_mood as song_mood,
     music_mood_category as song_mood_category,
     is_uplifting_music,
     is_depressing_music
     
   FROM {{ ref('music_mood') }}
-  WHERE played_at_ts IS NOT NULL
-    AND music_mood IS NOT NULL
+  WHERE played_at_ts IS NOT NULL  -- Only remove completely null timestamps
 )
 
--- Features only - NO combined_mood column
+-- Join music with weather using date and hour
 SELECT 
-  -- Time identifiers (features for time-based patterns)
+  -- Time identifiers
   m.music_timestamp as Event_Start_Timestamp,
   m.music_timestamp as Event_Received_Timestamp,
   m.music_timestamp as Event_End_Timestamp,
   
-  -- Song information (categorical features)
+  -- Song information
   m.Artist_Name,
   m.Content_Name,
+  m.album_name,
+  m.streamable,
   
-  -- Audio features (continuous features)
+  -- Audio features (from music_mood table)
   m.danceability,
   m.energy,
   m.valence,
@@ -85,12 +90,16 @@ SELECT
   m.duration_ms,
   m.explicit,
   m.track_genre,
+  m.speechiness,
+  m.acousticness,
+  m.instrumentalness,
+  m.liveness,
   
-  -- Individual mood scores (features, not combined)
+  -- Individual mood scores
   m.song_mood,
   w.weather_mood,
   
-  -- Weather data (environmental features)
+  -- Weather data
   w.temperature_2m,
   w.apparent_temperature,
   w.weather_condition,
@@ -99,7 +108,7 @@ SELECT
   w.precipitation,
   w.relativehumidity_2m,
   
-  -- Categorical features for encoding
+  -- Categorical features
   m.song_mood_category,
   w.weather_mood_category,
   w.temperature_category,
@@ -115,23 +124,20 @@ SELECT
   EXTRACT(HOUR FROM m.music_timestamp) as event_hour,
   EXTRACT(DAYOFWEEK FROM m.music_timestamp) as event_day_of_week,
   EXTRACT(MONTH FROM m.music_timestamp) as event_month,
+  EXTRACT(DAY FROM m.music_timestamp) as event_day,
   
-  -- Additional audio features from your schema
-  -- These come from your music_mood table schema
-  CAST(0 AS FLOAT64) as speechiness,  -- Placeholder
-  CAST(0 AS FLOAT64) as acousticness,  -- Placeholder  
-  CAST(0 AS FLOAT64) as instrumentalness,  -- Placeholder
-  CAST(0 AS FLOAT64) as liveness,  -- Placeholder
+  -- Join success indicator
+  CASE WHEN w.weather_date IS NOT NULL THEN TRUE ELSE FALSE END as has_weather_data,
   
-  -- Placeholder columns to match your training dataset structure
+  -- Placeholder columns for training dataset compatibility
   '' as track_id,
-  m.album_name,
   0 as key,
   0 as mode,
   0 as time_signature
 
 FROM music_data m
-INNER JOIN weather_data w
+LEFT JOIN weather_data w
   ON m.music_date = w.weather_date
   AND m.music_hour = w.weather_hour
+
 ORDER BY Event_Start_Timestamp
